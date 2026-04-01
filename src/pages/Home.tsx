@@ -1,20 +1,34 @@
 import { ArrowRight, CheckCircle2, Clock, Factory, FileText, ShieldCheck, Truck, UploadCloud } from 'lucide-react';
 
+// Import images from assets for guaranteed reliability
+import fireValveImg from '../assets/images/fire-valve.jpg';
+import airValveImg from '../assets/images/air-valve.jpg';
+import backdraftValveImg from '../assets/images/backdraft-valve.jpg';
+import grilleImg from '../assets/images/grille.jpg';
+import ventilationPartsImg from '../assets/images/ventilation-parts.jpg';
+import actuatorImg from '../assets/images/actuator.jpg';
+import heroImg from '../assets/images/hero.jpg';
+import productionImg from '../assets/images/production.jpg';
+
 export function Home({ setCurrentPage }: { setCurrentPage: (page: string) => void }) {
   const categories = [
-    { name: 'Клапаны противопожарные', count: '12 серий', image: 'https://images.unsplash.com/photo-1585751271182-353112c3002f?q=80&w=800&auto=format&fit=crop' },
-    { name: 'Клапаны воздушные регулирующие', count: '8 серий', image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop' },
-    { name: 'Клапаны обратные', count: '5 серий', image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop' },
-    { name: 'Вентиляционные решетки', count: '24 вида', image: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=800&auto=format&fit=crop' },
-    { name: 'Детали систем вентиляции', count: 'Более 100 наименований', image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop' },
-    { name: 'Электроприводы', count: 'В наличии', image: 'https://images.unsplash.com/photo-1580983554869-36602c3d0b2e?q=80&w=800&auto=format&fit=crop' },
+    { name: 'Клапаны противопожарные', count: '12 серий', image: fireValveImg },
+    { name: 'Клапаны воздушные регулирующие', count: '8 серий', image: airValveImg },
+    { name: 'Клапаны обратные', count: '5 серий', image: backdraftValveImg },
+    { name: 'Вентиляционные решетки', count: '24 вида', image: grilleImg },
+    { name: 'Детали систем вентиляции', count: 'Более 100 наименований', image: ventilationPartsImg },
+    { name: 'Электроприводы', count: 'В наличии', image: actuatorImg },
   ];
 
   return (
     <main>
       {/* Hero Section */}
       <section className="relative bg-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+        <img 
+          src={heroImg} 
+          alt="Industrial Background" 
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-transparent"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
@@ -183,10 +197,9 @@ export function Home({ setCurrentPage }: { setCurrentPage: (page: string) => voi
             </div>
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?q=80&w=2070&auto=format&fit=crop" 
+                src={productionImg} 
                 alt="Производство АлПлант" 
                 className="object-cover w-full h-full" 
-                referrerPolicy="no-referrer" 
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/90 to-transparent p-8">
                 <div className="text-white font-bold text-2xl mb-1">Цех металлообработки</div>
